@@ -19,6 +19,7 @@ const pool = new Pool({
 });
 */
 
+//para conectarse a heroku
 pool.connect();
 
 const router = new Router();
