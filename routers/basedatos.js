@@ -1,14 +1,25 @@
 const { Pool } = require('pg');
 const Router = require('express-promise-router');
 
+//Ya lo hice profe jajaja
+//Heroku
+const connectionString = "URI-HEROKU";
+const pool = new Pool({
+  connectionString: connectionString,
+  ssl: { rejectUnauthorized: false }
+});
+
+/* Localhost
 const pool = new Pool({
   user: 'postgres',
   host: 'localhost',
   database: 'postgres',
   password: 'AlejoCx2',
   port: 5432,
-}
-);
+});
+*/
+
+pool.connect();
 
 const router = new Router();
 // export our router to be mounted by the parent application
